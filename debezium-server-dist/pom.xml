@@ -331,6 +331,10 @@
                             <groupId>ch.qos.logback</groupId>
                             <artifactId>logback-classic</artifactId>
                         </exclusion>
+                        <exclusion>
+                            <groupId>org.apache.avro</groupId>
+                            <artifactId>avro</artifactId>
+                        </exclusion>
                     </exclusions>
                 </dependency>
                 <dependency>

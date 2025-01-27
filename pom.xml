@@ -24,6 +24,9 @@
         <!-- Support all log levels in Debezium Server -->
         <quarkus.log.min-level>TRACE</quarkus.log.min-level>
 
+        <!-- Setting up security provider to BouncyCastleFIPS -->
+        <quarkus.security.security-providers>BCFIPS</quarkus.security.security-providers>
+
         <!-- Debezium parent -->
         <version.debezium>${project.version}</version.debezium>
     </properties>
@@ -94,6 +97,17 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-resteasy-jackson</artifactId>
+        </dependency>
+
+        <!-- Including Quarkus Security and BC-FIPS provider -->
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bc-fips</artifactId>
+            <version>1.0.2.5</version>
         </dependency>
 
         <dependency>
@@ -174,6 +188,33 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- Fixing vulnerabilities -->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.25.5</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-common</artifactId>
+            <version>4.1.115.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20231013</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.11.4</version>
         </dependency>
     </dependencies>
 </project>
