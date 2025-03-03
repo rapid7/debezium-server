@@ -1,0 +1,17 @@
+---
+info:
+  title: debezium-server
+  description: Debezium Server is a standalone Java application built on Quarkus framework. The application itself contains the core module and a set of modules responsible for communication with different target systems.
+  x-cortex-git:
+    github:
+      alias: r7org
+      repository: rapid7/debezium-server
+  x-cortex-tag: debezium-server
+  x-cortex-type: service
+  x-cortex-domain-parents:
+    - tag: data-platform-transport
+  x-cortex-groups:
+    - exposure:opensource
+openapi: 3.0.0
+servers:
+  - url: "/"
